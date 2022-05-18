@@ -1,14 +1,15 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import {InputForm} from "./InputForm";
 
 function App() {
 
 
   return (
       <div className="App">
+          <div className="appDiv">
         <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
+            <InputForm/>
           <a
               className="App-link"
               href="https://github.com/oliwiakubera/test-app-v2.git"
@@ -18,7 +19,9 @@ function App() {
             Repozytorium
           </a>
         </header>
+
       </div>
+</div>
   );
 }
 export default App;
