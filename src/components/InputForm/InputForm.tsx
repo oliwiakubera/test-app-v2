@@ -1,4 +1,4 @@
-import {useState, useEffect, useCallback} from "react";
+import React, {useState, useEffect, useCallback} from "react";
 
 interface InputFormProps {
     defaultValue?: string;
@@ -53,9 +53,17 @@ export const InputForm = (props?: InputFormProps) => {
 
     return <div style={{display: "flex", flexDirection: 'column'}} className="wrapper">
         {displayError && <div style={{color: 'red'}}>{errorMessage}</div>}
-        <div className="welcome">Welcome</div>
+        <div className="contact-form    ">Form</div>
         <input className="formInput"  onInput={handleInputChange} value={inputValue} type="text" placeholder="Username"/>
         <br/>
         <button className="submitButton" onClick={handleSubmit} disabled={!formReadyToSubmit}>Submit</button>
+        <a
+            className="App-link-repo"
+            href="https://github.com/oliwiakubera/test-app-v2.git"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            Repozytorium
+        </a>
     </div>
 }
