@@ -1,1 +1,1 @@
-export {Extras} from './Extras'
+export {Rick} from './Extras'

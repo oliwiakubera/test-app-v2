@@ -3,7 +3,7 @@ import './App.css';
 import {InputForm} from "./InputForm";
 import {Routes, Route, Link} from "react-router-dom";
 import {About} from "./components/about/About"
-import {Extras} from "./components/extras/Extras"
+import {Rick} from "./components/extras/Extras"
 
 export const routesPaths = {
     about: 'about',
@@ -31,7 +31,7 @@ function App() {
                     <Route path='/' element={<div className='home-div'>Welcome to my first app that was made using react.</div>}/>
                     <Route path='*' element={<div>404</div>}/>
                     <Route path={`/${routesPaths.about}`} element={<About></About>}/>
-                   <Route path={`/${routesPaths.extras}`} element={<Extras></Extras>}/>
+                   <Route path={`/${routesPaths.extras}`} element={<Rick></Rick>}/>
                     <Route path='/form' element={<InputForm/>}/>
                 </Routes>
 
