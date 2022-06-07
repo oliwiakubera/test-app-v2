@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import {InputForm} from "./components/InputForm";
+import {InputForm} from "./InputForm";
 import {Routes, Route, Link} from "react-router-dom";
 import {About} from "./components/about/About"
 import {Extras} from "./components/extras/Extras"
