@@ -19,7 +19,7 @@ export const Rick=() =>{
         fetchImages();
     }, [_]);
 
-    if (loading) return <p>"Loading..."</p>;
+    if (loading) return <p>"Ładowanie"</p>;
     return (
         <Box sx={{ minHeight: 220 }}>
             <Button onClick={() => reload(Math.random())}> Zmień układ siatki</Button>
