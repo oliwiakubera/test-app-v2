@@ -3,11 +3,13 @@ import {useState, useEffect, useCallback} from "react";
 interface InputFormProps {
     defaultValue?: string;
 }
+
 const storageFormKey = 'inputValue';
+
 
 export const InputForm = (props?: InputFormProps) => {
     const [displayError, setDisplayError] = useState<boolean>(false)
-    const [inputValue, setInputValue] = useState<string>('Enter name')
+    const [inputValue, setInputValue] = useState<string>('pusta wartość')
     const [errorMessage, setErrorMessage] = useState<string>('')
 
     const formReadyToSubmit = !(displayError || !inputValue);
@@ -17,11 +19,11 @@ export const InputForm = (props?: InputFormProps) => {
         setInputValue(event.target.value);
         if (messageLength < 3 || messageLength > 20) {
             if (messageLength < 3) {
-                setErrorMessage('User name are to short :(')
+                setErrorMessage('User name are to short')
             }
 
             if (messageLength > 20) {
-                setErrorMessage('User name are to long :/')
+                setErrorMessage('User name are to long')
             }
 
             setDisplayError(true)
@@ -35,7 +37,7 @@ export const InputForm = (props?: InputFormProps) => {
         if (formReadyToSubmit) {
             localStorage.setItem(storageFormKey, inputValue)
         }
-    }, [inputValue])
+    }, [inputValue, formReadyToSubmit])
 
     useEffect(() => {
         let valueToSet = '';
@@ -49,13 +51,21 @@ export const InputForm = (props?: InputFormProps) => {
         }
 
         setInputValue(valueToSet);
-    }, [])
+    }, [props])
 
     return <div style={{display: "flex", flexDirection: 'column'}} className="wrapper">
         {displayError && <div style={{color: 'red'}}>{errorMessage}</div>}
-        <div className="welcome">Welcome</div>
+        <div className="contact-form    ">Form</div>
         <input className="formInput"  onInput={handleInputChange} value={inputValue} type="text" placeholder="Username"/>
         <br/>
         <button className="submitButton" onClick={handleSubmit} disabled={!formReadyToSubmit}>Submit</button>
+        <a
+            className="App-link-repo"
+            href="https://github.com/oliwiakubera/test-app-v2.git"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            Repozytorium
+        </a>
     </div>
 }
